@@ -31,7 +31,7 @@ const ListGroup = ({
         <div className="flex justify-end">
           <button
             onClick={handleAllDoneBtn}
-            className=" bg-neutral-100 px-3 py-1 border border-neutral-700"
+            className=" bg-purple-100 px-3 py-1 border border-purple-700 duration-150 hover:bg-purple-600 hover:text-white"
           >
             All Done
           </button>

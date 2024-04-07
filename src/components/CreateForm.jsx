@@ -24,7 +24,7 @@ const CreateForm = ({ addTask }) => {
     <div>
       <div className="flex mb-5">
         <input
-          className="flex-grow border border-neutral-700 h-14 px-3 focus-visible:outline-none"
+          className="flex-grow border border-purple-700 h-14 px-3 focus-visible:outline-none"
           type="text"
           id="textInput"
           value={input}
@@ -34,7 +34,7 @@ const CreateForm = ({ addTask }) => {
         <button
           onClick={handleAddBtn}
           id="addBtn"
-          className="h-14 w-14 bg-neutral-700 text-white flex justify-center items-center"
+          className="h-14 w-14 bg-purple-700 text-white flex justify-center items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -22,7 +22,7 @@ const List = ({ id, job, isDone, doneTask, deleteTask,updateTask,doneAllTask }) 
   }
   return (
     <div className="list">
-      <div className="group animate__animated animate__zoomIn border mb-3 overflow-hidden border-neutral-700 p-5 flex justify-between items-center">
+      <div className="group animate__animated animate__zoomIn border mb-3 overflow-hidden border-purple-700 p-5 flex justify-between items-center">
         {edit ? (
           <input
           onBlur={handleUpdateInputBlur}
@@ -31,12 +31,12 @@ const List = ({ id, job, isDone, doneTask, deleteTask,updateTask,doneAllTask }) 
             type="text"
             name=""
             id=""
-            className={`border border-neutral-500 focus:outline-neutral-300 px-3 py-1 w-[250px]`}
+            className={`border border-purple-500 focus:outline-purple-300 px-3 py-1 w-[250px]`}
           />
         ) : (
           <div className="content flex items-center gap-3">
             <input
-              className="list-check accent-neutral-700 w-4 h-4"
+              className="list-check accent-purple-700 w-4 h-4"
               type="checkbox"
               checked={isDone}
               onChange={handleCheckBox}
@@ -53,7 +53,7 @@ const List = ({ id, job, isDone, doneTask, deleteTask,updateTask,doneAllTask }) 
         <div className="control opacity-100 pointer-events-none duration-300 translate-x-[100px] group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-x-0 flex gap-1">
           <button
             onClick={handleEditBtn}
-            className={`list-edit duration-300 active:scale-75 disabled:opacity-20 ${
+            className={`list-edit  duration-300 active:scale-75 disabled:opacity-20 ${
               isDone && "opacity-40 pointer-events-none"
             }`}
           >
@@ -63,7 +63,7 @@ const List = ({ id, job, isDone, doneTask, deleteTask,updateTask,doneAllTask }) 
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-6 h-6 stroke-1"
+              className="w-6 h-6 stroke-1 stroke-purple-800"
             >
               <path
                 strokeLinecap="round"
@@ -82,7 +82,7 @@ const List = ({ id, job, isDone, doneTask, deleteTask,updateTask,doneAllTask }) 
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-6 h-6 stroke-1"
+              className="w-6 h-6 stroke-1 stroke-purple-800"
             >
               <path
                 strokeLinecap="round"
