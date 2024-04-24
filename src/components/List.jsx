@@ -1,8 +1,17 @@
 import React, { useState } from "react";
+import EditInput from "./EditInput";
 
-const List = ({ id, job, isDone, doneTask, deleteTask,updateTask,doneAllTask }) => {
+const List = ({
+  id,
+  job,
+  isDone,
+  doneTask,
+  deleteTask,
+  updateTask,
+  doneAllTask,
+}) => {
   const [edit, setEdit] = useState(false);
-  const [updateInput,setUpdateInput]=useState(job)
+  const [updateInput, setUpdateInput] = useState(job);
   console.log(updateInput);
   const handleCheckBox = () => {
     doneTask(id);
@@ -13,25 +22,21 @@ const List = ({ id, job, isDone, doneTask, deleteTask,updateTask,doneAllTask }) 
   const handleEditBtn = () => {
     setEdit(!edit);
   };
-  const handleUpdateInput=(event) => {
-    setUpdateInput(event.target.value)
-  }
-  const handleUpdateInputBlur=() => {
-    updateTask(id,updateInput)
-    setEdit(false)
-  }
+  const handleUpdateInput = (event) => {
+    setUpdateInput(event.target.value);
+  };
+  const handleUpdateInputBlur = () => {
+    updateTask(id, updateInput);
+    setEdit(false);
+  };
   return (
     <div className="list">
       <div className="group animate__animated animate__zoomIn border mb-3 overflow-hidden border-purple-700 p-5 flex justify-between items-center">
         {edit ? (
-          <input
-          onBlur={handleUpdateInputBlur}
-          onChange={handleUpdateInput}
-          value={updateInput}
-            type="text"
-            name=""
-            id=""
-            className={`border border-purple-500 focus:outline-purple-300 px-3 py-1 w-[250px]`}
+          <EditInput
+            updateInput={updateInput}
+            handleUpdateInput={handleUpdateInput}
+            handleUpdateInputBlur={handleUpdateInputBlur}
           />
         ) : (
           <div className="content flex items-center gap-3">
