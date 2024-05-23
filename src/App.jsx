@@ -15,24 +15,36 @@ const App = () => {
   const addTask = (newTask) => {
     setTasks([...tasks, newTask]);
   };
- const doneTask=(id) => {
-  setTasks(tasks.map((task)=>task.id===id ? ({...task,isDone:!task.isDone}):task))
- }
-const deleteTask=(id) => {
-  setTasks(tasks.filter((task)=>task.id!==id))
-}
-const updateTask=(id,newJob) => {
-  setTasks(tasks.map((task)=>task.id===id? {...task,job:newJob}:task))
-}
-const doneAllTask=() => {
-  setTasks(tasks.map((task)=>({...task,isDone:true})))
-}
+  const doneTask = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, isDone: !task.isDone } : task
+      )
+    );
+  };
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+  const updateTask = (id, newJob) => {
+    setTasks(
+      tasks.map((task) => (task.id === id ? { ...task, job: newJob } : task))
+    );
+  };
+  const doneAllTask = () => {
+    setTasks(tasks.map((task) => ({ ...task, isDone: true })));
+  };
   return (
     <div className="w-[400px] mx-auto mt-20">
       <Heading />
       <CreateForm addTask={addTask} />
       <Status tasks={tasks} />
-      <ListGroup doneAllTask={doneAllTask} updateTask={updateTask} deleteTask={deleteTask} doneTask={doneTask} tasks={tasks} />
+      <ListGroup
+        doneAllTask={doneAllTask}
+        updateTask={updateTask}
+        deleteTask={deleteTask}
+        doneTask={doneTask}
+        tasks={tasks}
+      />
     </div>
   );
 };
